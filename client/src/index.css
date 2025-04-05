@@ -1,1 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import "tailwindcss";
+
+*{
+    font-family: "Press Start 2P", system-ui;
+    box-shadow: 4px 4px 0 black;
+    transition: 0.13;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+}
+
