@@ -6,6 +6,16 @@
     box-shadow: 4px 4px 0 black;
     transition: 0.13;
     transition-timing-function: ease-in;
-    cursor: pointer;
+    cursor: url(https://cdn.custom-cursor.com/db/13682/32/gradient-green-pepper-cursor.png),auto;
+}
+
+input:hover,
+button:hover{
+    cursor: url(https://cdn.custom-cursor.com/db/13681/32/gradient-green-pepper-pointer.png),pointer;
+}
+
+::selection{
+    background-color: green;
+    color: antiquewhite;
 }
 

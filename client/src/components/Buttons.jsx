@@ -7,7 +7,7 @@ const Buttons = ({ bgColor, btnText, buttonCallback }) => {
 
     return (
         <button
-            className={`p-3 h-14 mx-3 my-8 border-3 rounded-md ${bgColor} border-black text-black font-bold outline-none focus:outline-none hover:scale-[1.01]`}
+            className={`p-3 h-14 mx-3 my-8 border-3 rounded-md ${bgColor} border-black text-black font-bold outline-none focus:outline-none hover:scale-[1.01] cursor-pointer`}
             onClick={buttonClick}
         >
             {btnText.toUpperCase()}
