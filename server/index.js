@@ -8,7 +8,7 @@ const wordToNum = require('./wordToNum')
 const app = express()
 app.use(express.json())
 app.use(morgan('tiny'))
-app.use(cors)
+app.use(cors())
 
 function validateInput(request){
     const schema = Joi.object({
