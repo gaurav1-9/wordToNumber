@@ -19,7 +19,7 @@ const App = () => {
           className="w-lg p-3 h-14 my-8 border-3 rounded-md border-black text-black font-bold outline-none focus:outline-none hover:scale-[1.01] focus:scale-[1.01] cursor-pointer"
           ref = {inpRef}
         />
-        <Buttons bgColor='bg-green-500' btnText='convert number' buttonCallback={convertToNum} />
+        <Buttons bgColor='bg-green-500' btnText='Actual NUmber' buttonCallback={convertToNum} />
       </form>
     </div>
   )
