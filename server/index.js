@@ -15,6 +15,10 @@ function validateInput(request){
     return schema.validate(request);
 }
 
+app.get('/' ,(req,res)=>{
+    res.send("Server is running go to port '/wordToNum'")
+})
+
 app.get('/wordToNum', (req,res)=>{
     const {error} = validateInput(req.query)
     if(error) return res.status(404).send(error.details[0].message)
