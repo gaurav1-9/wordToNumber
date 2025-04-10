@@ -29,10 +29,10 @@ function wordToNum(number) {
     let isNaN = false;
     console.log(`Number (in wrods): ${inpNum}`);
 
-    let unit = 0, teens = 0, hundred = 0, finalNumber = 0;
+    let unit = 0, teens = 0, hundred = 0, finalNumber = 0, negative = 1;
     const numToken = inpNum.split(' ')
 
-    numToken.forEach((token) => {
+    numToken.forEach((token,index) => {
         switch (token) {
             case 'hundred':
                 if (unit !== 0) {
@@ -48,6 +48,11 @@ function wordToNum(number) {
             case 'zero':
                 break;
 
+            case 'negative':
+            case 'minus':
+                if(index==0) negative= -1
+                break;
+            
             case 'one':
                 unit = 1;
                 break;
@@ -97,7 +102,7 @@ function wordToNum(number) {
         }
     });
 
-    finalNumber = hundred + teens + unit;
+    finalNumber = (hundred + teens + unit) * negative;
     console.log(`OUTPUT: ${finalNumber}`)
     return {
         inp: number,
