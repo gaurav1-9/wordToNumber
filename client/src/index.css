@@ -23,3 +23,18 @@ button:hover{
     color: antiquewhite;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0fdf4;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00c951;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0 black;
+}
