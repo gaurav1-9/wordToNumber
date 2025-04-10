@@ -44,7 +44,7 @@ const App = () => {
       </div>
       <div className="w-2xl text-xl font-medium h-100 overflow-y-scroll overflow-x-hidden mt-3">
         {numList.map((item, index) => (
-          <div className='mb-4 pr-2'>
+          <div className='mb-4 pr-6'>
             <p key={index} className='flex'>
               <span className='w-2xl'>{item.input}</span>
               <span className=''>{item.output}</span>
