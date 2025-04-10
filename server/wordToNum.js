@@ -26,6 +26,7 @@ function teenNums(token) {
 
 function wordToNum(number) {
     const inpNum = number.toLowerCase();
+    let isNaN = false;
     console.log(`Number (in wrods): ${inpNum}`);
 
     let unit = 0, teens = 0, hundred = 0, finalNumber = 0;
@@ -39,6 +40,10 @@ function wordToNum(number) {
                     unit = 0;
                 }
                 else hundred = 100;
+                break;
+
+            case 'and':
+            case 'only':
                 break;
 
             case 'one':
@@ -85,6 +90,7 @@ function wordToNum(number) {
                 else if (token.endsWith('teen')) {
                     teens = 10 + teenNums(token);
                 }
+                else isNaN= true;
                 break;
         }
     });
@@ -93,7 +99,7 @@ function wordToNum(number) {
     console.log(`OUTPUT: ${finalNumber}`)
     return {
         inp: number,
-        output: finalNumber
+        output: (!isNaN)?finalNumber:"NaN"
     }
 }
 
