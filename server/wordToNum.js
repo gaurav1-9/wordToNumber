@@ -44,6 +44,7 @@ function wordToNum(number) {
 
             case 'and':
             case 'only':
+            case 'zero':
                 break;
 
             case 'one':
