@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios';
 import Buttons from './components/Buttons'
+import NumOutput from './components/NumOutput';
 
 const App = () => {
   const inpRef = useRef(null);
   const scrollRef = useRef(null);
   const [numList, setNumList] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  },[numList])
+  }, [numList])
 
   async function getNum(url) {
     try {
@@ -54,13 +55,7 @@ const App = () => {
         className="w-2xl text-xl font-medium h-100 overflow-y-scroll overflow-x-hidden mt-3"
       >
         {numList.map((item, index) => (
-          <div className='mb-4 pr-6'>
-            <p key={index} className='flex'>
-              <span className='w-2xl'>{item.input}</span>
-              <span className=''>{item.output}</span>
-            </p>
-            <div className='w-2xl overflow-clip bg-zinc-500/30 h-0.5'></div>
-          </div>
+          <NumOutput key={index} input={item.input} output={item.output} />
         ))}
       </div>
     </div>
