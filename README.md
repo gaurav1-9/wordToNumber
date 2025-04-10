@@ -43,8 +43,8 @@ npm run dev
 ```
 
 ## Project Screenshots
-<img src="./Img/intro.png" width=400px/>
-<img src="./Img/data.png" width=400px/>
+<img src="./Img/intro.png" width=600px/>
+<img src="./Img/data.png" width=600px/>
 
 ## Contribution
 Feel free to fork the repo and create pull requests with improvements.
