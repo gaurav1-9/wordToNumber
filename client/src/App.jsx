@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios';
 import Buttons from './components/Buttons'
 import NumOutput from './components/NumOutput';
+import IntroMsg from './components/IntroMsg';
 
 const App = () => {
   const inpRef = useRef(null);
@@ -54,9 +55,13 @@ const App = () => {
         ref={scrollRef}
         className="w-2xl text-xl font-medium h-100 overflow-y-scroll overflow-x-hidden mt-3"
       >
-        {numList.map((item, index) => (
-          <NumOutput key={index} input={item.input} output={item.output} />
-        ))}
+        {
+          (numList.length) ?
+            numList.map((item, index) => (
+              <NumOutput key={index} input={item.input} output={item.output} />
+            ))
+            : <IntroMsg />
+        }
       </div>
     </div>
   )
