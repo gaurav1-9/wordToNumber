@@ -1,10 +1,17 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios';
 import Buttons from './components/Buttons'
 
 const App = () => {
   const inpRef = useRef(null);
+  const scrollRef = useRef(null);
   const [numList, setNumList] = useState([])
+
+  useEffect(()=>{
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  },[numList])
 
   async function getNum(url) {
     try {
@@ -42,7 +49,10 @@ const App = () => {
           <Buttons bgColor='bg-green-500' btnText='Actual NUmber' buttonCallback={convertToNum} />
         </form>
       </div>
-      <div className="w-2xl text-xl font-medium h-100 overflow-y-scroll overflow-x-hidden mt-3">
+      <div
+        ref={scrollRef}
+        className="w-2xl text-xl font-medium h-100 overflow-y-scroll overflow-x-hidden mt-3"
+      >
         {numList.map((item, index) => (
           <div className='mb-4 pr-6'>
             <p key={index} className='flex'>
